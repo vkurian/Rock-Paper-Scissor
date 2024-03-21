@@ -8,7 +8,7 @@ const Choice=["rock","paper","scissor"]
     return Computerchoice;
  }
 
- getComputerChoice()
+ 
 
  function singleRound(playerSelection, computerSelection){
     if (playerSelection=='rock' && computerSelection == 'scissor'
@@ -29,6 +29,14 @@ const Choice=["rock","paper","scissor"]
 
  }
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-singleRound(playerSelection, computerSelection)
+ function playGame(){
+    
+  for(let i=0; i<5; i++){
+  var playerSelection = "rock"; 
+  var computerSelection = getComputerChoice();
+
+  singleRound(playerSelection, computerSelection)
+  }
+ }
+
+ playGame();

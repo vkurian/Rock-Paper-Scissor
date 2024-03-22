@@ -7,8 +7,30 @@ const Choice=["rock","paper","scissor"]
     let Computerchoice= Choice[Math.floor(Math.random() * Choice.length)];
     return Computerchoice;
  }
+ function playerChoice(){
+    //var humanChoice=prompt("Rock, Paper OR Scissor")
+    //var humanChoiceinLower=humanChoice.toLowerCase()
+    let input=false;
+    
+    
+    while(input==false){
+        var humanChoice=prompt("Rock, Paper OR Scissor")
+        if (humanChoice==null){
+            continue;
+        }
+         
+    var humanChoiceinLower= humanChoice.toLowerCase()
+    if(Choice.includes(humanChoiceinLower)){
+        input=true;
+        return humanChoiceinLower;
+    }
 
- 
+    }
+}
+    
+
+    
+    
 
  function singleRound(playerSelection, computerSelection){
     if (playerSelection=='rock' && computerSelection == 'scissor'
@@ -27,16 +49,17 @@ const Choice=["rock","paper","scissor"]
     console.log("Tie")
    }
 
+
  }
 
  function playGame(){
     
   for(let i=0; i<5; i++){
-  var playerSelection = "rock"; 
+  var playerSelection =  playerChoice(); 
   var computerSelection = getComputerChoice();
 
-  singleRound(playerSelection, computerSelection)
+  console.log(singleRound(playerSelection, computerSelection))
   }
  }
 
- playGame();
+ playGame()

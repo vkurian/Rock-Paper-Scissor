@@ -61,6 +61,7 @@ const Choice=["rock","paper","scissor"]
 
 
   console.log( singleRound(playerSelection, computerSelection))
+  console.log("____________________________________")
 
   if(singleRound(playerSelection, computerSelection)==`You Win ${playerSelection} beats ${computerSelection}`){
     playerScore++
@@ -71,7 +72,7 @@ const Choice=["rock","paper","scissor"]
 
   
   }
-
+  console.log("Total winner");
   if (playerScore>computerScore){
     console.log(`you win the game palyerscore`)
 }

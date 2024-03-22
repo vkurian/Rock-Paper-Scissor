@@ -36,30 +36,54 @@ const Choice=["rock","paper","scissor"]
     if (playerSelection=='rock' && computerSelection == 'scissor'
     || playerSelection=='scissor' && computerSelection == 'paper'
     || playerSelection=='paper' && computerSelection == 'rock'){
-        console.log(`You Win ${playerSelection} beats ${computerSelection}`)
+        return `You Win ${playerSelection} beats ${computerSelection}`
     }
    else if(playerSelection=='scissor' && computerSelection == 'rock'
    || playerSelection=='paper' && computerSelection == 'rock'
    || playerSelection=='rock' && computerSelection == 'paper'){
 
-    console.log(`You lose ${computerSelection} beats ${playerSelection}`)
+    return `You lose ${computerSelection} beats ${playerSelection}`
    }
 
    else{
-    console.log("Tie")
+    return "Tie"
    }
 
 
  }
 
  function playGame(){
-    
+    var playerScore=0;
+    var computerScore=0;
   for(let i=0; i<5; i++){
   var playerSelection =  playerChoice(); 
   var computerSelection = getComputerChoice();
 
-  console.log(singleRound(playerSelection, computerSelection))
+
+  console.log( singleRound(playerSelection, computerSelection))
+
+  if(singleRound(playerSelection, computerSelection)==`You Win ${playerSelection} beats ${computerSelection}`){
+    playerScore++
   }
+  else if(singleRound(playerSelection, computerSelection)==`You lose ${computerSelection} beats ${playerSelection}`){
+    computerScore++
+  }
+
+  
+  }
+
+  if (playerScore>computerScore){
+    console.log(`you win the game palyerscore`)
+}
+
+else if (playerScore<computerScore){
+    console.log(`Computer wins the game `)
+}
+
+else{
+    console.log("ITs a Tie game ")
+}
+
  }
 
  playGame()
